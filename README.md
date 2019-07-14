@@ -29,7 +29,6 @@
 ## 🖥 Tech Stack
 
 - Deployed in Heroku
-- Travis CI for Auto build checks
 - Renovate for Auto Dependency updates
 
 ## 🚀 Features
