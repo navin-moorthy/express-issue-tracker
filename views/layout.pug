@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,500')
+    link(rel="icon" type="image/x-icon" href="/images/favicon.png")
+    script(src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js")
+  body
+    header.mdc-top-app-bar.mdc-elevation--z8
+      div.mdc-top-app-bar__row
+        section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-start
+          a(href="/")
+            button.mdc-button.mdc-ripple-surface
+              span.mdc-button__label.mdc-top-app-bar__title  ISSUE-TRACKER
+          a(href="/issues")
+            button.mdc-button.mdc-ripple-surface
+              span.mdc-button__label.mdc-top-app-bar__title  DASHBOARD
+              i.material-icons.mdc-button__icon(aria-hidden="true") dashboard
+    block content
+    script(src="/javascripts/script.js")

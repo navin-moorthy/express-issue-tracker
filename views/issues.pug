@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .dashboardContainer.mdc-elevation--z8
+    header.mdc-top-app-bar.mdc-elevation--z4
+      div.mdc-top-app-bar__row
+        section.mdc-top-app-bar__section
+          span.mdc-button__label.mdc-top-app-bar__title  ALL ISSUES
+          a(href="/issues/new")
+            button.mdc-button.mdc-ripple-surface#newButton
+              span.mdc-button__label.mdc-top-app-bar__title  NEW ISSUE
+              i.material-icons.mdc-button__icon(aria-hidden="true") add
+    .issueContainer
+      header.mdc-top-app-bar.mdc-elevation--z8
+        div.mdc-top-app-bar__row
+          section.mdc-top-app-bar__section
+            span.mdc-button__label Issue ID
+            span.mdc-button__label.paddingLeft100 Short Description
+            span.mdc-button__label Issue Status
+      if issues.length === 0
+        p Click "NEW ISSUE" to create a new issue
+      else
+        each issue in issues
+          a(href="/issues/" + issue.id)
+            header.mdc-top-app-bar.mdc-elevation--z4.allIssues
+              div.mdc-top-app-bar__row
+                section.mdc-top-app-bar__section
+                  span.mdc-button__label=issue.id
+                  span.mdc-button__label=issue.shortDescription
+                  span.mdc-button__label=issue.status.toUpperCase()

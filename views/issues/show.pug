@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  .issueContainer
+    .column
+      .row
+        a(href=`/issues/${issue.id}/edit`)
+          button.mdc-button.mdc-button--raised.marginy5#updateButton UPDATE
+        h2 Details about the Issue
+        form(action=`/issues/${issue.id}?_method=DELETE`, method="POST")
+          button.mdc-button.mdc-button--raised.marginy5#deleteButton DELETE
+      div
+        .row
+          div
+            b Issue ID
+            p=issue.id
+          div
+            b Short Description
+            p=issue.shortDescription
+        .row
+          div
+            b Status
+            p=issue.status.toUpperCase()
+          div
+            b Severity
+            p=issue.severity.toUpperCase()
+        .row
+          div
+            b Date Created
+            p=issue.dateCreated
+          div
+            b Resolution Date
+            p=issue.resolutionDate
+        .row
+          div
+            b Details
+            p=issue.details

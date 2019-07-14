@@ -1,0 +1,90 @@
+extends ../layout
+
+
+block content
+  .issueContainer
+    .column
+      .row
+        h2 Update the Issue
+      .row
+        form(action=`/issues/${issue.id}?_method=PUT`, method="POST")
+          .column
+            .row.marginbottom2
+              .mdc-form-field.marginy5
+                .mdc-text-field.mdc-text-field--outlined.formWidth
+                  input(type="number" value=issue.id name="id" placeholder="Enter Issue ID" required)#issueId.mdc-text-field__input
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="issueId") Issue ID
+                    .mdc-notched-outline__trailing
+              .mdc-form-field.flexColumn.marginy3
+                .mdc-text-field.mdc-text-field--outlined.shortDescriptionWidth
+                  input(type="text" value=issue.shortDescription name="shortDescription" placeholder="Enter Issue Short Description" maxlength="25" autocomplete="off" required)#issueShortDescription.mdc-text-field__input
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="issueShortDescription") Short Description
+                    .mdc-notched-outline__trailing
+                .mdc-text-field-helper-line
+                  .mdc-text-field-helper-text Max 25 Chars
+                  .mdc-text-field-character-counter 0 / 25
+            .row        
+              .mdc-form-field.marginy5
+                .mdc-select.mdc-select--outlined.formWidth
+                  input(type="hidden" value=issue.status name="status" required)
+                  i.mdc-select__dropdown-icon
+                  .mdc-select__selected-text
+                  .mdc-select__menu.mdc-menu.mdc-menu-surface.formWidth
+                    ul.mdc-list
+                      li.mdc-list-item(data-value="open" aria-selected="true") Open
+                      li.mdc-list-item(data-value="inprogress" aria-selected="true") In Progress
+                      li.mdc-list-item(data-value="close" aria-selected="true") Close
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="issueStatus") Status
+                    .mdc-notched-outline__trailing       
+              .mdc-form-field.marginy5
+                .mdc-select.mdc-select--outlined.formWidth
+                  input(type="hidden" value=issue.severity name="severity" required)
+                  i.mdc-select__dropdown-icon
+                  .mdc-select__selected-text
+                  .mdc-select__menu.mdc-menu.mdc-menu-surface.formWidth
+                    ul.mdc-list
+                      li.mdc-list-item(data-value="low" aria-selected="true") Low
+                      li.mdc-list-item(data-value="medium" aria-selected="true") Medium
+                      li.mdc-list-item(data-value="high" aria-selected="true") High
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="issueSeverity") Severity
+                    .mdc-notched-outline__trailing
+            .row.marginx2
+              .mdc-form-field.marginy5
+                .mdc-text-field.mdc-text-field--outlined.formWidth
+                  input(type="date" value=issue.dateCreated name="dateCreated" placeholder="Enter Date Created" required)#dateCreated.mdc-text-field__input
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="dateCreated") Date Created
+                    .mdc-notched-outline__trailing
+              .mdc-form-field.marginy5
+                .mdc-text-field.mdc-text-field--outlined.formWidth
+                  input(type="date" value=issue.resolutionDate name="resolutionDate" placeholder="Enter Resolution Date" required)#resolutionDate.mdc-text-field__input
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="resolutionDate") Resolution Date
+                    .mdc-notched-outline__trailing
+            .row
+              .mdc-form-field
+                .mdc-text-field.mdc-text-field--outlined.mdc-text-field--textarea.formWidth
+                  //- input(type="date" name="dateCreated" placeholder="Enter Date Created" required)#dateCreated.mdc-text-field__input
+                  textarea.mdc-text-field__input#details(name="details" rows="1" cols="76" placeholder="Enter Date Created" required)=issue.details
+                  .mdc-notched-outline
+                    .mdc-notched-outline__leading
+                    .mdc-notched-outline__notch
+                      label.mdc-floating-label.mdc-floating-label--shake(for="details") Details
+                    .mdc-notched-outline__trailing
+          button.mdc-button.mdc-button--raised.marginx2#updateButton(type=submit) Submit

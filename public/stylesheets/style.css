@@ -1,0 +1,140 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 18px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mdc-top-app-bar {
+  position: static !important;
+}
+
+.mdc-top-app-bar .mdc-button:not(:disabled) {
+  color: white !important;
+}
+
+.indexContainer {
+  margin: auto;
+  max-width: 100vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.indexContainer button {
+  margin-bottom: 15px;
+  background: #018786 !important;
+}
+
+.indexContainer button a {
+  color: white;
+}
+
+.dashboardContainer {
+  margin: 5rem auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboardContainer .mdc-top-app-bar__section {
+  justify-content: space-between;
+}
+
+.issueContainer {
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.issueContainer .mdc-top-app-bar__section {
+  justify-content: space-between;
+}
+
+.issueContainer .mdc-top-app-bar.allIssues {
+  background-color: #fff !important;
+  color: #018786 !important ;
+}
+
+.issueContainer .mdc-top-app-bar:first-child {
+  background-color: #018786;
+  color: #fff;
+}
+
+.marginy5 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.marginx2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.marginbottom2 {
+  margin-bottom: 2rem;
+}
+
+.marginy3 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.shortDescriptionWidth {
+  width: 314px;
+}
+
+.formWidth {
+  width: 250px;
+}
+
+.paddingLeft100 {
+  padding-left: 100px;
+}
+
+#deleteButton {
+  background-color: red !important;
+  color: #fff !important;
+}
+
+#updateButton {
+  background-color: #018786 !important;
+  color: #fff !important;
+}
+
+#createButton {
+  border-color: deeppink !important;
+  color: deeppink !important;
+}
+
+#newButton {
+  background-color: #00000021;
+}
