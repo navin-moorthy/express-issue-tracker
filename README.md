@@ -13,12 +13,8 @@
 </p>
 
 <p align="center">
-  Added more customization to the project
-</p>
-
-<p align="center">
   <strong>
-  Checkout my site at <a href="https://navin-navi.github.io/angular-issue-tracker/">Angular Issue Tracker</a>
+  Checkout my site at <a href="https://express-issue-tracker.herokuapp.com/>Express Issue Tracker</a>
   </strong>
 </p>
 
@@ -42,7 +38,7 @@
 - CRUD operation on Json powered API
 - Express Framework
 - Pug for UI
-- Work with JSON data
+- Works with JSON data
 
 <div align="center">
 
